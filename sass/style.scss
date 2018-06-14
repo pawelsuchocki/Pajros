@@ -11,15 +11,13 @@ body {
 	width: 100%;
 	background-image: url("../images/DLL.jpg");
 }
-#main-section {
-	transition: 5s;
-	}
 .nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 6vw;
 	height: 10vh;
+	animation: opacity 5s alternate;
 }
 .nav-tittle {
 	font-family: 'Yesteryear', cursive;
@@ -31,6 +29,10 @@ body {
 	text-transform: uppercase;
 	margin-left: 20px;
 	color: #ffffff;
+	transition: 0.5s;
+}
+.nav-link:hover {
+	color: #8b8883;
 }
 .main {
 	display: flex;
@@ -38,6 +40,10 @@ body {
 	align-items: center;
 	padding: 0 10vw;
 	height: 60vh;
+}
+.main-div {
+	cursor: pointer;
+	animation: main-div 3s alternate;
 }
 .main-number {
 	color: #8b8883;
@@ -59,7 +65,7 @@ body {
 	background-color: #8b8883;
 	opacity: 0.4;
 	height: 4px;
-	width: 25vw;
+	width: 130%;
 	background-position: 100% 0;
 	background-size: 300%;
 	transition: 1.5s;
@@ -81,6 +87,10 @@ body {
 	align-items: center;
 	padding: 0 6vw;
 	height: 30vh;
+	animation: opacity 5s alternate;
+}
+.footer-news {
+	cursor: pointer;
 }
 .footer-news-div2 {
 	margin-bottom: 30px;
@@ -109,6 +119,10 @@ body {
 	font-size: 1.2rem;
 	text-decoration: none;
 	color: #ffffff;
+	transition: 0.5s;
+}
+.footer-media-link:hover {
+	text-transform: uppercase;
 }
 .footer-media-slash {
 	color: #8b8883;
@@ -122,21 +136,66 @@ body {
 	background-color: #8b8883;
 	opacity: 0.4;
 	height: 4px;
-	width: 13vw;
+	width: 60%;
 	margin: 5px 0 20px;
 }
-.dll {
-	background-image: url("../images/DLL.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
+
+@keyframes main-div {
+	from {
+		transform: scale(0.1);
+	}
+	to {
+		transform: scale(1);
+	}
 }
-.benz {
-	background-image: url("../images/Benz.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
+@keyframes main-section {
+	from {
+		transform: scale(0.1);
+	}
+	to {
+		transform: scale(1);
+	}
 }
-.cartoon {
-	background-image: url("../images/Cartoon.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+
+@media (max-width: 767px) {
+	html { 
+		font-size: 50%; 
+	}
+	.nav {
+		flex-wrap: wrap;
+	}
+	.nav-link {
+		margin-left: 1px;
+	}
+	.main {
+		flex-wrap: wrap;
+	}
+	.footer-news {
+		display: none;
+	}
+	.footer-media-p1 {
+		justify-content: flex-start;
+	}
+	.footer-media-bottom {
+		float: left;
+	}
+	.main-section {
+		background-image: url("../images/background.jpg");
+	}
+	.main-div {
+		background-image: none;
+	}
+	.main-bottom {
+		width: 100%;
+	}
 }
